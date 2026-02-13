@@ -1,0 +1,154 @@
+body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 0 0 15px rgba(255,255,255,0.7);
+        }
+
+        .container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* ✉️ Envelope */
+        .envelope-wrapper {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .envelope {
+            position: relative;
+            width: 260px;
+            height: 170px;
+            background: linear-gradient(to bottom, #fff5f7, #ffd6e0);
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: 0.4s ease;
+            overflow: hidden;
+        }
+
+        .envelope:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        /* X fold lines */
+        .envelope::before,
+        .envelope::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid rgba(255,140,160,0.4);
+            transform-origin: center;
+        }
+
+        .envelope::before {
+            transform: rotate(45deg);
+        }
+
+        .envelope::after {
+            transform: rotate(-45deg);
+        }
+
+        /* Flap */
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 85px;
+            background: linear-gradient(to bottom, #ff8fab, #ff6f91);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            z-index: 2;
+        }
+
+        /* Wax seal */
+        .seal {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background: radial-gradient(circle, #b3003c, #800026);
+            border-radius: 50%;
+            top: 65px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.4);
+            z-index: 3;
+        }
+
+        .label {
+            margin-top: 15px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px rgba(255,255,255,0.6);
+        }
+
+        /* Fullscreen Letter */
+        .fullscreen-letter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/aged-paper.png');
+            background-color: #fffaf0;
+            padding: 60px 40px;
+            box-sizing: border-box;
+            display: none;
+            overflow-y: auto;
+            animation: slideUp 0.7s ease forwards;
+            z-index: 9999;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .letter-content {
+            max-width: 800px;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #5a3e36;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            background: #ff6f91;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6f91;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
